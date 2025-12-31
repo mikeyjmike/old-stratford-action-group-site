@@ -17,6 +17,5 @@ collections:
           - { name: "hero_tagline", label: "Hero tagline", widget: "text" }
           - { name: "hero_subcopy", label: "Hero subcopy", widget: "text" }
           - { name: "position_statement", label: "Position statement", widget: "text" }
-          - { name: "about_us", label: "About us", widget: "text" }
-          - { name: "contact_email", label: "Contact email", widget: "string" }
-          - { name: "footer_text", label: "Footer text", widget: "  text" }
+
+
