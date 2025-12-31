@@ -1,601 +1,112 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Old Stratford Action Group</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Old Stratford Action Group: information and actions on the Deanshanger Road development proposals.">
+  <title>Old Stratford Action Group</title>
 
-  <!-- Social sharing -->
-  <meta property="og:title" content="Old Stratford Action Group">
-  <meta property="og:description" content="Find out about the Deanshanger Road development proposals and how you can respond.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.org.uk/">
-  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
 
+  <!-- Basic styling fallback if you don't have styles.css -->
   <style>
-    :root {
-      --green-main: #2b6c44;
-      --green-dark: #1d4630;
-      --green-soft: #e1f0e6;
-      --green-pale: #f4faf6;
-      --text-main: #222222;
-      --text-soft: #555555;
-      --border-soft: #dde4dd;
-      --max-width: 1120px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text-main);
-      background: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--green-dark);
-      text-decoration: none;
-    }
-    a:hover,
-    a:focus {
-      text-decoration: underline;
-    }
-
-    /* Top navigation */
-
-    .site-shell {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .top-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
-      background: rgba(255,255,255,0.96);
-      border-bottom: 1px solid #e4e4e4;
-      backdrop-filter: blur(10px);
-    }
-
-    .top-bar-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0.55rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .brand-mark {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .brand-symbol {
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      border: 2px solid var(--green-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      background: #f5faf7;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-    }
-
-    .brand-name {
-      font-weight: 650;
-      letter-spacing: 0.06em;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      color: var(--green-dark);
-    }
-
-    .brand-sub {
-      font-size: 0.78rem;
-      color: var(--text-soft);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.86rem;
-    }
-
-    .nav-links a {
-      color: #333333;
-    }
-    .nav-links a:hover,
-    .nav-links a:focus {
-      color: var(--green-dark);
-    }
-
-    @media (max-width: 720px) {
-      .top-bar-inner {
-        padding-inline: 1rem;
-      }
-      .nav-links {
-        gap: 0.7rem;
-      }
-    }
-
-    /* Hero */
-
-    .hero {
-      padding: 6.5rem 1.5rem 3.2rem; /* extra top padding to clear fixed nav */
-      background:
-        linear-gradient(to bottom, #f2faf5 0, #ffffff 55%);
-      border-bottom: 1px solid #e7eee7;
-    }
-
-    .hero-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .hero-title {
-      font-size: clamp(2.1rem, 4vw, 2.9rem);
-      margin: 0 0 0.5rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--green-dark);
-    }
-
-    .hero-tagline {
-      margin: 0.2rem 0 0.4rem;
-      font-size: 1.05rem;
-    }
-
-    .hero-subcopy {
-      margin: 0.3rem 0 0.9rem;
-      font-size: 0.97rem;
-      color: var(--text-soft);
-    }
-
-    .hero-actions {
-      margin-top: 1.3rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-    }
-
-    .btn-primary,
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.8rem 1.7rem;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: 1px solid transparent;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--green-main);
-      border-color: var(--green-main);
-      color: #ffffff;
-    }
-    .btn-primary:hover,
-    .btn-primary:focus {
-      background: var(--green-dark);
-      border-color: var(--green-dark);
-      text-decoration: none;
-    }
-
-    .btn-outline {
-      background: #ffffff;
-      border-color: var(--border-soft);
-      color: var(--green-dark);
-    }
-
-    .btn-outline:hover,
-    .btn-outline:focus {
-      border-color: var(--green-main);
-      text-decoration: none;
-    }
-
-    .hero-side-card {
-      background: #ffffff;
-      border-radius: 14px;
-      border: 1px solid var(--border-soft);
-      padding: 1.2rem 1.3rem 1.1rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-      font-size: 0.9rem;
-    }
-
-    .hero-side-card h3 {
-      margin-top: 0;
-      font-size: 1rem;
-      color: var(--green-dark);
-    }
-
-    .hero-meta {
-      margin-top: 0.7rem;
-      font-size: 0.83rem;
-      color: var(--text-soft);
-    }
-
-    @media (max-width: 880px) {
-      .hero-inner {
-        grid-template-columns: minmax(0,1fr);
-      }
-    }
-
-    /* Main sections */
-
-    main {
-      flex: 1;
-      padding: 2.2rem 1.5rem 3.2rem;
-    }
-
-    .content-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    section {
-      margin-bottom: 2.8rem;
-    }
-
-    h2.section-title {
-      font-size: 1.55rem;
-      margin-bottom: 0.8rem;
-      color: var(--green-dark);
-    }
-
-    h3 {
-      font-size: 1.08rem;
-      margin-top: 1.1rem;
-      margin-bottom: 0.35rem;
-    }
-
-    p {
-      margin: 0.35rem 0 0.8rem;
-    }
-
-    ul,
-    ol {
-      margin: 0.3rem 0 0.9rem;
-      padding-left: 1.2rem;
-    }
-
-    li + li {
-      margin-top: 0.25rem;
-    }
-
-    .highlight-box {
-      background: var(--green-soft);
-      border-left: 4px solid var(--green-main);
-      padding: 0.9rem 1rem;
-      margin: 1rem 0 1.4rem;
-      border-radius: 6px;
-      font-size: 0.95rem;
-    }
-
-    .grid-two {
-      display: grid;
-      grid-template-columns: minmax(0,1.6fr) minmax(0,1.3fr);
-      gap: 1.9rem;
-    }
-
-    @media (max-width: 900px) {
-      .grid-two {
-        grid-template-columns: minmax(0,1fr);
-      }
-    }
-
-    .issue-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.3rem;
-      margin-top: 0.7rem;
-    }
-
-    .issue-card {
-      border-radius: 12px;
-      border: 1px solid var(--border-soft);
-      padding: 1rem 1rem 0.9rem;
-      background: #ffffff;
-      font-size: 0.93rem;
-    }
-
-    .issue-card h3 {
-      margin-top: 0;
-      font-size: 1.02rem;
-      color: var(--green-dark);
-    }
-
-    .muted-panel {
-      background: var(--green-pale);
-      border-radius: 14px;
-      border: 1px solid var(--border-soft);
-      padding: 1.4rem 1.3rem 1.2rem;
-      font-size: 0.94rem;
-    }
-
-    .action-steps {
-      display: grid;
-      grid-template-columns: minmax(0,1.5fr) minmax(0,1.2fr);
-      gap: 1.6rem;
-      margin-top: 0.8rem;
-    }
-
-    @media (max-width: 880px) {
-      .action-steps {
-        grid-template-columns: minmax(0,1fr);
-      }
-    }
-
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.4rem;
-    }
-
-    .pill-list span {
-      font-size: 0.8rem;
-      border-radius: 999px;
-      padding: 0.2rem 0.7rem;
-      background: #eef0ee;
-    }
-
-    footer {
-      border-top: 1px solid #e4e4e4;
-      padding: 1.4rem 1.5rem 2.1rem;
-      font-size: 0.82rem;
-      color: #666666;
-      text-align: center;
-      background: #fafafa;
-    }
+    body { font-family: system-ui, -apple-system, Segoe UI, Arial; margin:0; color:#222; }
+    header { background: #003c27; color:#fff; padding: 3rem 1rem; text-align:center; }
+    header h1 { margin:0 0 .5rem; font-size:2.2rem; }
+    header p { max-width:700px; margin:.6rem auto; line-height:1.5; }
+    main { max-width:1000px; margin:2rem auto; padding:0 1rem; }
+    section { margin-bottom:2.5rem; }
+    .highlight-box { background:#f1f8f5; border-left:6px solid #006b4e; padding:1.2rem 1rem; font-size:1.1rem; }
+    footer { background:#111; color:#bbb; text-align:center; padding:2rem 1rem; margin-top:3rem; }
+    footer a { color:#fff; }
   </style>
 </head>
-<body id="top">
-  <div class="site-shell">
 
-    <header class="top-bar">
-      <div class="top-bar-inner">
-        <a href="#top" class="brand-mark">
-          <div class="brand-symbol" aria-hidden="true">OS</div>
-          <div class="brand-text">
-            <span class="brand-name">Old Stratford Action Group</span>
-            <span class="brand-sub">Residents working together</span>
-          </div>
-        </a>
-        <nav class="nav-links" aria-label="Main">
-          <a href="#proposal">Proposal</a>
-          <a href="#concerns">Issues</a>
-          <a href="#act">Take action</a>
-          <a href="#resources">Resources</a>
-          <a href="#about">About</a>
-        </nav>
-      </div>
-    </header>
+<body>
 
-    <section class="hero" id="home">
-      <div class="hero-inner">
-        <div>
-          <h1 class="hero-title">Protect Old Stratford’s fields</h1>
-          <p class="hero-tagline">Find out what is planned on the Deanshanger Road site and how you can respond through the planning process.</p>
-          <p class="hero-subcopy">
-            Old Stratford Action Group is a local, non party political group of residents. We are here to explain the proposals in plain English and help people make their views known.
-          </p>
-          <div class="hero-actions">
-            <a href="#act" class="btn-primary">How to object</a>
-            <a href="#concerns" class="btn-outline">Why residents are concerned</a>
-          </div>
-        </div>
+  <!-- HERO -->
+  <header>
+    <h1 id="hero-title">
+      Protect Old Stratford’s fields
+    </h1>
 
-        <aside class="hero-side-card">
-          <h3>At a glance</h3>
-          <p>
-            Developers are promoting plans for a housing estate on the fields off Deanshanger Road. The scheme will be decided by West Northamptonshire Council.
-          </p>
-          <div class="hero-meta">
-            <strong>Headline facts</strong><br>
-            Approx. 220 homes proposed, with new access from Deanshanger Road. Open farmland on the edge of the village would be lost if the scheme proceeds.
-          </div>
-        </aside>
-      </div>
+    <p id="hero-tagline">
+      Find out what is planned on the Deanshanger Road site and how you can respond through the planning process.
+    </p>
+
+    <p id="hero-subcopy">
+      Old Stratford Action Group is a local, non-party political group of residents. We are here to explain the proposals in plain English and help people make their views known.
+    </p>
+  </header>
+
+  <!-- MAIN SECTION -->
+  <main>
+
+    <section class="highlight-box">
+      <p id="position-statement">
+        <strong>Our position:</strong>
+        we believe this is the wrong development in the wrong place at the wrong scale for Old Stratford.
+      </p>
     </section>
 
-    <main>
-      <div class="content-inner">
+    <section>
+      <h2>What’s happening?</h2>
+      <p>
+        This site explains what is being proposed, the process the council will follow,
+        and how you can raise concerns in a constructive, effective way.
+      </p>
+    </section>
 
-        <section id="proposal">
-          <h2 class="section-title">What is being proposed</h2>
-          <div class="grid-two">
-            <div>
-              <p>
-                A strategic land promoter is bringing forward a planning application for new housing on the fields to the west of Old Stratford, off Deanshanger Road. The current intention is for around
-                <strong>220 new homes</strong> with <strong>50 percent “affordable” housing</strong>, together with internal roads and associated works.
-              </p>
-              <p>
-                The land is currently open countryside between Old Stratford and the A5 and A422 routes. The application will be considered by
-                <strong>West Northamptonshire Council</strong> through its planning process.
-              </p>
-              <div class="highlight-box">
-                <strong>Our position:</strong> we believe this is the wrong development in the wrong place at the wrong scale for Old Stratford.
-              </div>
-            </div>
+    <section>
+      <h2>How you can help</h2>
+      <ul>
+        <li>Stay informed about what is being proposed</li>
+        <li>Share information with neighbours and friends</li>
+        <li>Submit planning responses when invited to do so</li>
+      </ul>
+    </section>
 
-            <div class="muted-panel">
-              <h3>Key points</h3>
-              <ul>
-                <li>Location: fields off Deanshanger Road on the western side of Old Stratford.</li>
-                <li>Scale: around 220 homes, a mix of market and so-called affordable housing.</li>
-                <li>Access: vehicles routed on to Deanshanger Road and through existing junctions.</li>
-                <li>Decision: planning application to be determined by West Northamptonshire Council.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+  </main>
 
-        <section id="concerns">
-          <h2 class="section-title">Why residents are concerned</h2>
-          <p>
-            Residents who have spoken to the group are raising a consistent set of concerns about the impact of the scheme on day to day life in and around Old Stratford.
-          </p>
+  <!-- FOOTER -->
+  <footer>
+    <p>Old Stratford Action Group</p>
+    <p>&copy; <span id="year"></span></p>
+  </footer>
 
-          <div class="issue-grid">
-            <article class="issue-card">
-              <h3>Traffic and safety</h3>
-              <p>
-                All estate traffic would use Deanshanger Road, adding pressure at village pinch points and at already busy junctions. Increased movements raise risks for children walking to school and people using pavements and crossings.
-              </p>
-            </article>
-
-            <article class="issue-card">
-              <h3>Local services</h3>
-              <p>
-                GP, dentist and hospital services in the wider area are already stretched. School places are limited, with pupils relying on Deanshanger and other schools that are under pressure.
-              </p>
-            </article>
-
-            <article class="issue-card">
-              <h3>Flood risk and drainage</h3>
-              <p>
-                The Great Ouse corridor and nearby land have a history of flooding and high water levels. More hard surfaces and roads risk increasing surface water run off and pressure on drainage systems.
-              </p>
-            </article>
-
-            <article class="issue-card">
-              <h3>Countryside and wildlife</h3>
-              <p>
-                The fields off Deanshanger Road form part of the remaining countryside setting of Old Stratford. Large scale development here would erode that setting and displace wildlife that uses the fields and hedgerows.
-              </p>
-            </article>
-
-            <article class="issue-card">
-              <h3>Cumulative impact</h3>
-              <p>
-                Other sites to the west of Old Stratford are being promoted for future development. Taken together there is a real risk of much larger change to the area than many residents expect.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section id="act">
-          <h2 class="section-title">How you can take action</h2>
-          <div class="action-steps">
-            <div>
-              <h3>1. Submit a planning objection</h3>
-              <p>The most direct step you can take is to submit a formal comment to West Northamptonshire Council.</p>
-              <ol>
-                <li>Visit the Council’s online planning portal.</li>
-                <li>Search for <strong>“Deanshanger Road, Old Stratford”</strong> or use the planning reference once published.</li>
-                <li>Select <strong>“Comment on this application”</strong>.</li>
-                <li>Write your objection in your own words and submit it before the deadline.</li>
-              </ol>
-              <p>
-                Focus on planning matters such as traffic, access, road safety, school places, health services, flood risk, biodiversity and loss of green space, rather than house prices or who owns the land.
-              </p>
-            </div>
-
-            <div>
-              <h3>2. Contact your representatives</h3>
-              <p>You can also write to:</p>
-              <ul>
-                <li>Your West Northamptonshire ward councillors for Old Stratford</li>
-                <li>Old Stratford Parish Council</li>
-                <li>Your Member of Parliament</li>
-              </ul>
-              <p>
-                Ask them to challenge the scale and location of the development, and to press for refusal or substantial changes that better protect the village and surrounding area.
-              </p>
-
-              <h3>3. Stay in touch with the group</h3>
-              <p>We will share key dates, template letters and briefing notes as they become available.</p>
-              <ul>
-                <li>Email: <a href="mailto:info@example.org.uk">info@example.org.uk</a></li>
-                <li>Facebook group: <a href="#">Link to follow</a></li>
-                <li>Messaging group: <a href="#">Link to follow</a></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="resources">
-          <h2 class="section-title">Resources and links</h2>
-          <p>These links provide background information and official documents.</p>
-          <ul>
-            <li><a href="#">Developer consultation site for the Deanshanger Road proposals</a></li>
-            <li><a href="#">Project page for Deanshanger Road, Old Stratford</a></li>
-            <li><a href="#">Old Stratford Parish Council website</a></li>
-            <li><a href="#">West Northamptonshire Council planning portal</a></li>
-          </ul>
-
-          <p>Group briefing notes and template letters will be added here as they are prepared:</p>
-          <ul>
-            <li><a href="#">Traffic and highways briefing (PDF)</a></li>
-            <li><a href="#">Education and health services briefing (PDF)</a></li>
-            <li><a href="#">Template planning objection letter (Word)</a></li>
-          </ul>
-        </section>
-
-        <section id="about">
-          <h2 class="section-title">About Old Stratford Action Group</h2>
-          <p>
-            Old Stratford Action Group is a local, non party political group of residents concerned about the
-            scale and impact of proposed development on and around Old Stratford.
-          </p>
-          <p>
-            We aim to share clear information, help residents who want to submit planning objections, and engage
-            constructively with councillors, officers and other organisations on behalf of the village.
-          </p>
-
-          <div class="highlight-box">
-            <strong>Independence:</strong>
-            Old Stratford Action Group is independent of Old Stratford Parish Council, West Northamptonshire Council,
-            The Parks Trust, landowners and developers. All views on this site are those of the group and the residents who support it.
-          </div>
-
-          <p>If you would like to help with leafletting, research or events, please get in touch by email.</p>
-
-          <div class="pill-list">
-            <span>Local voices</span>
-            <span>Evidence based</span>
-            <span>Non party political</span>
-          </div>
-        </section>
-
-      </div>
-    </main>
-
-    <footer>
-      <p>© <span id="year"></span> Old Stratford Action Group</p>
-      <p>Information on this site is provided by local residents. For official planning documents and decisions, please use the West Northamptonshire Council planning portal.</p>
-    </footer>
-
-  </div>
-
+  <!-- YEAR + CMS CONTENT LOADER -->
   <script>
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Load CMS JSON content if available
+    fetch('content/site.json')
+      .then(function (response) {
+        if (!response.ok) throw new Error('No CMS JSON found');
+        return response.json();
+      })
+      .then(function (data) {
+        if (data.hero_title) {
+          document.getElementById('hero-title').textContent = data.hero_title;
+        }
+
+        if (data.hero_tagline) {
+          document.getElementById('hero-tagline').textContent = data.hero_tagline;
+        }
+
+        if (data.hero_subcopy) {
+          document.getElementById('hero-subcopy').textContent = data.hero_subcopy;
+        }
+
+        if (data.position_statement) {
+          document.getElementById('position-statement').innerHTML =
+            '<strong>Our position:</strong> ' + data.position_statement;
+        }
+      })
+      .catch(function (err) {
+        console.warn('CMS content not loaded (using default HTML text).', err);
+      });
   </script>
+
 </body>
 </html>
+
