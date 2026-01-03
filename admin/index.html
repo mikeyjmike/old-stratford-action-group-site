@@ -3,8 +3,27 @@
 <head>
   <meta charset="utf-8">
   <title>Old Stratford Action Group – Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+
+  <!-- Netlify Identity widget: login/signup UI -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+  <!-- Decap CMS UI -->
   <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+
+  <script>
+    // Optional: if already logged in, keep you in the CMS
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>

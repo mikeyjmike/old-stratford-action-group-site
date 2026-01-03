@@ -17,5 +17,5 @@ collections:
           - { name: "hero_tagline", label: "Hero tagline", widget: "text" }
           - { name: "hero_subcopy", label: "Hero subcopy", widget: "text" }
           - { name: "position_statement", label: "Position statement", widget: "text" }
-
-
+          - { name: "hero_cta_primary_label", label: "Primary button label", widget: "string" }
+          - { name: "hero_cta_secondary_label", label: "Secondary button label", widget: "string" }
