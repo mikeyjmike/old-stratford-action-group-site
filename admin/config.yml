@@ -2,20 +2,44 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
 
 collections:
   - name: "site"
-    label: "Site content"
+    label: "Site Content"
+    delete: false
+    editor:
+      preview: false
     files:
       - file: "content/site.json"
         name: "homepage"
         label: "Homepage"
         fields:
-          - { name: "hero_title", label: "Hero title", widget: "string" }
-          - { name: "hero_tagline", label: "Hero tagline", widget: "text" }
-          - { name: "hero_subcopy", label: "Hero subcopy", widget: "text" }
-          - { name: "position_statement", label: "Position statement", widget: "text" }
-          - { name: "hero_cta_primary_label", label: "Primary button label", widget: "string" }
-          - { name: "hero_cta_secondary_label", label: "Secondary button label", widget: "string" }
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Tagline", name: "hero_tagline", widget: "string" }
+          - { label: "Hero Subcopy", name: "hero_subcopy", widget: "text" }
+
+          - label: "Hero Image"
+            name: "hero_image"
+            widget: "image"
+            allow_multiple: false
+            media_library:
+              config:
+                multiple: false
+
+          - { label: "Position Statement", name: "position_statement", widget: "text" }
+
+          - { label: "CTA 1 Heading", name: "cta1_heading", widget: "string" }
+          - { label: "CTA 1 Button Text", name: "cta1_button", widget: "string" }
+          - { label: "CTA 1 Subcopy", name: "cta1_sub", widget: "string", required: false }
+
+          - { label: "CTA 2 Heading", name: "cta2_heading", widget: "string" }
+          - { label: "CTA 2 Button Text", name: "cta2_button", widget: "string" }
+          - { label: "CTA 2 Subcopy", name: "cta2_sub", widget: "string", required: false }
+
+          - { label: "CTA 3 Heading", name: "cta3_heading", widget: "string" }
+          - { label: "CTA 3 Button Text", name: "cta3_button", widget: "string" }
+          - { label: "CTA 3 Subcopy", name: "cta3_sub", widget: "string", required: false }
